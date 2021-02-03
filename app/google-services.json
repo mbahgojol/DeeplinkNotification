@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "413286302230",
+    "project_id": "notificationdeepl",
+    "storage_bucket": "notificationdeepl.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:413286302230:android:e33f27dc58c9f02f0d6b37",
+        "android_client_info": {
+          "package_name": "com.example.notificationdeeplink"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "413286302230-cj65ng64v3rdpjmkttt5bunfbre6ua16.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAo2ukzCRV7foXWg4o9x13HhcTKPj9Fl64"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "413286302230-cj65ng64v3rdpjmkttt5bunfbre6ua16.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
