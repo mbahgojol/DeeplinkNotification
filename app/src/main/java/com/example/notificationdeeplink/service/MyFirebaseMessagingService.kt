@@ -36,11 +36,16 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
         // Check if message contains a notification payload.
         remoteMessage.notification?.let {
             val response = it.body.toString()
-            val jsonObjects = JSONObject(response)
-            val msg = jsonObjects.getString("msg")
-            val navTo = jsonObjects.getString("navigateTo")
-            sendNotification(msg, navTo)
-            Log.d(TAG, "Message ===> ${msg}")
+
+            try {
+                val jsonObjects = JSONObject(response)
+                val msg = jsonObjects.getString("msg")
+                val navTo = jsonObjects.getString("navigateTo")
+                sendNotification(msg, navTo)
+                Log.d(TAG, "Message ===> $msg")
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
             Log.d(TAG, "Message Notification Body: ${it.body}")
         }
     }
@@ -68,7 +73,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
 
     private fun sendNotification(messageBody: String, navTo: String) {
         val intent = Intent(Intent.ACTION_VIEW, Uri.parse(navTo))
-        intent.putExtra("msg",messageBody)
+        intent.putExtra("msg", messageBody)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         val pendingIntent = PendingIntent.getActivity(
             this, 0 /* Request code */, intent,
