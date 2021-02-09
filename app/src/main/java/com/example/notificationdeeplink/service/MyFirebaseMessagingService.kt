@@ -25,6 +25,13 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
         // Check if message contains a data payload.
         if (remoteMessage.data.isNotEmpty()) {
             Log.d(TAG, "Message data payload: ${remoteMessage.data}")
+            if (remoteMessage.data.containsKey("nama") && remoteMessage.data.containsKey("umur")) {
+                val nama = remoteMessage.data.getValue("nama")
+                val umur = remoteMessage.data.getValue("umur")
+
+                Log.d(TAG, "Nama = $nama")
+                Log.d(TAG, "Umur = $umur")
+            }
 
             if (true) {
                 scheduleJob()
